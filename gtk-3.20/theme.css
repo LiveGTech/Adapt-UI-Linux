@@ -1,0 +1,35 @@
+/*
+    Adapt UI Theme for Linux
+
+    Copyright (C) LiveG. All Rights Reserved.
+
+    https://liveg.tech
+    Licensed by the LiveG Open-Source Licence, which can be found at LICENCE.md.
+*/
+
+@define-color primaryBackground rgb(255, 255, 255);
+@define-color primaryText rgb(0, 0, 0);
+@define-color primaryUI rgb(85, 139, 246);
+@define-color primaryUIText rgb(255, 255, 255);
+@define-color primaryUIPress rgb(117, 158, 240);
+@define-color primaryExtra rgba(0, 0, 0, 0.5);
+@define-color primaryPress rgba(0, 0, 0, 0.2);
+@define-color primarySelected rgba(0, 0, 0, 0.1);
+@define-color secondaryBackground rgb(229, 229, 229);
+@define-color secondaryText rgb(0, 0, 0);
+@define-color secondaryUI rgb(161, 190, 247);
+@define-color secondaryUIText rgb(255, 255, 255);
+@define-color secondaryUIPress rgb(188, 207, 245);
+@define-color secondaryExtra rgba(0, 0, 0, 0.5);
+@define-color secondaryPress rgba(0, 0, 0, 0.2);
+@define-color secondarySelected rgba(0, 0, 0, 0.1);
+@define-color dangerousUI rgb(224, 108, 108);
+@define-color dangerousUIText rgb(255, 255, 255);
+@define-color dangerousUIPress rgb(221, 136, 136);
+@define-color scrollbar rgba(0, 0, 0, 0.5);
+@define-color scrollbarHover rgba(0, 0, 0, 0.6);
+@define-color scrollbarPress rgba(0, 0, 0, 0.8);
+@define-color menuOutline rgba(255, 255, 255, 0.5);
+@define-color blur rgba(0, 0, 0, 0.5);
+@define-color skeleton rgba(0, 0, 0, 0.1);
+@define-color codeBackground rgba(0, 0, 0, 0.1);

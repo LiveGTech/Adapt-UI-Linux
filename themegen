@@ -1,0 +1,91 @@
+#!/usr/bin/env node
+
+/*
+    Adapt UI Theme for Linux
+
+    Copyright (C) LiveG. All Rights Reserved.
+
+    https://liveg.tech
+    Licensed by the LiveG Open-Source Licence, which can be found at LICENCE.md.
+*/
+
+const fs = require("fs");
+
+const COPYRIGHT_HEADER = `\
+/*
+    Adapt UI Theme for Linux
+
+    Copyright (C) LiveG. All Rights Reserved.
+
+    https://liveg.tech
+    Licensed by the LiveG Open-Source Licence, which can be found at LICENCE.md.
+*/
+
+`;
+
+function rgb(r, g, b) {
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+function rgba(r, g, b, a) {
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+}
+
+function hsl(h, s, l) {
+    s = s / 100;
+    l = l / 100;
+
+    var a = s * Math.min(l, 1 - l);
+    var f = (n, k = (n + (h / 30)) % 12) => l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+
+    return `rgb(${Math.round(f(0) * 255)}, ${Math.round(f(8) * 255)}, ${Math.round(f(4) * 255)})`;
+}
+
+var parameters = {
+    primaryHue: () => 220,
+    primarySaturation: () => 90,
+    primaryLightness: () => 65,
+    secondaryHue: () => parameters.primaryHue(),
+    secondarySaturation: () => 85,
+    secondaryLightness: () => 80,
+    dangerousHue: () => 0,
+    dangerousSaturation: () => 65,
+    dangerousLightness: () => 65
+};
+
+var colours = {
+    primaryBackground: rgb(255, 255, 255),
+    primaryText: rgb(0, 0, 0),
+    primaryUI: hsl(parameters.primaryHue(), parameters.primarySaturation(), parameters.primaryLightness()),
+    primaryUIText: rgb(255, 255, 255),
+    primaryUIPress: hsl(parameters.primaryHue(), parameters.primarySaturation() - 10, parameters.primaryLightness() + 5),
+    primaryExtra: rgba(0, 0, 0, 0.5),
+    primaryPress: rgba(0, 0, 0, 0.2),
+    primarySelected: rgba(0, 0, 0, 0.1),
+    secondaryBackground: rgb(229, 229, 229),
+    secondaryText: rgb(0, 0, 0),
+    secondaryUI: hsl(parameters.secondaryHue(), parameters.secondarySaturation(), parameters.secondaryLightness()),
+    secondaryUIText: rgb(255, 255, 255),
+    secondaryUIPress: hsl(parameters.secondaryHue(), parameters.secondarySaturation() - 10, parameters.secondaryLightness() + 5),
+    secondaryExtra: rgba(0, 0, 0, 0.5),
+    secondaryPress: rgba(0, 0, 0, 0.2),
+    secondarySelected: rgba(0, 0, 0, 0.1),
+    dangerousUI: hsl(parameters.dangerousHue(), parameters.dangerousSaturation(), parameters.dangerousLightness()),
+    dangerousUIText: rgb(255, 255, 255),
+    dangerousUIPress: hsl(parameters.dangerousHue(), parameters.dangerousSaturation() - 10, parameters.dangerousLightness() + 5),
+    scrollbar: rgba(0, 0, 0, 0.5),
+    scrollbarHover: rgba(0, 0, 0, 0.6),
+    scrollbarPress: rgba(0, 0, 0, 0.8),
+    menuOutline: rgba(255, 255, 255, 0.5),
+    blur: rgba(0, 0, 0, 0.5),
+    skeleton: rgba(0, 0, 0, 0.1),
+    codeBackground: rgba(0, 0, 0, 0.1)
+};
+
+var lines = [];
+
+Object.keys(colours).forEach(function(name) {
+    lines.push(`@define-color ${name} ${colours[name]};`);
+});
+
+fs.writeFileSync("gtk-3.20/theme.css", COPYRIGHT_HEADER + lines.join("\n"));

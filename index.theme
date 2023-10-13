@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Adapt UI
+Comment=A theme for Linux apps that resembles the Adapt UI design language.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=Adapt UI
+GtkTheme=Adapt UI
+IconTheme=Adapt UI

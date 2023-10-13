@@ -1,0 +1,214 @@
+/*
+    Adapt UI Theme for Linux
+
+    Copyright (C) LiveG. All Rights Reserved.
+
+    https://liveg.tech
+    Licensed by the LiveG Open-Source Licence, which can be found at LICENCE.md.
+*/
+
+* {
+    font-family: "URW Gothic L";
+    font-size: 16px;
+}
+
+*:disabled {
+    opacity: 0.5;
+}
+
+*:selected {
+    background-color: @primaryBackground;
+    color: @primaryText;
+}
+
+.background {
+    background-color: @primaryBackground;
+    color: @primaryText;
+}
+
+headerbar {
+    padding: 4px;
+    background-color: @primaryUI;
+    color: @primaryUIText;
+}
+
+headerbar stackswitcher button:checked {
+    background-color: @secondaryUI;
+    color: @secondaryUIText;
+}
+
+headerbar stackswitcher button + button {
+    margin-left: 4px;
+}
+
+button, entry {
+    min-height: 24px;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+button {
+    background-color: @primaryUI;
+    color: @primaryUIText;
+    border-radius: 8px;
+    transition: 0.5s background-color;
+}
+
+button:hover {
+    background-color: @primaryUIPress;
+}
+
+button.color {
+    padding: 2px;
+}
+
+button.color colorswatch {
+    border-radius: 6px;
+}
+
+button image, spinbutton button {
+    padding-bottom: 4px;
+}
+
+entry {
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+    border-radius: 8px;
+}
+
+combobox entry.combo {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+combobox button.combo {
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+}
+
+combobox button.combo:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+combobox + combobox {
+    padding-left: 2px;
+}
+
+selection {
+    background-color: @primaryUI;
+    color: @primaryUIText;
+    padding-top: 2px;
+    border-top: 2px solid @primaryUI;
+}
+
+frame, scrolledwindow.frame {
+    margin: 2px;
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+    border-radius: 8px;
+    background-clip: border-box;
+}
+
+treeview {
+    min-height: 24px;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 0;
+}
+
+treeview:selected {
+    background-color: @primaryUI;
+    color: @primaryUIText;
+}
+
+treeview header {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+treeview header button {
+    min-height: 24px;
+    border-radius: 0;
+    background-color: @secondarySelected;
+    color: @secondaryText;
+}
+
+treeview header button:hover {
+    background-color: @secondaryPress;
+}
+
+treeview header button:first-child {
+    border-top-left-radius: 8px;
+}
+
+treeview header button:last-child {
+    border-top-right-radius: 8px;
+}
+
+scrollbar button {
+    width: 0;
+    min-width: 0;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+scrollbar slider {
+    margin: 4px;
+    background-color: @scrollbar;
+    border: 4px solid transparent;
+    border-radius: 8px;
+}
+
+menubar {
+    background-color: @secondaryBackground;
+}
+
+menuitem {
+    padding: 4px;
+    transition: 0.5s background-color;
+}
+
+menuitem:hover {
+    background-color: @secondaryPress;
+}
+
+window menu {
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+    border-radius: 8px;
+}
+
+window menu menuitem {
+    padding-top: 8px;
+}
+
+window menu menuitem:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+window menu menuitem:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+popover {
+    border: 1px solid @secondaryPress;
+    border-radius: 8px;
+}
+
+tooltip {
+    border-radius: 8px;
+}
+
+tooltip.background {
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+    border: 1px solid @secondarySelected;
+    border-radius: 8px;
+}
