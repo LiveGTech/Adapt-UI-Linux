@@ -52,7 +52,7 @@ button {
     background-color: @primaryUI;
     color: @primaryUIText;
     border-radius: 8px;
-    transition: 0.5s background-color;
+    transition: 0.5s background-color, 0.5s color;
 }
 
 button:hover {
@@ -69,6 +69,30 @@ button.color colorswatch {
 
 button image, spinbutton button {
     padding-bottom: 4px;
+}
+
+button.toggle:not(:checked) {
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+}
+
+button.toggle:not(:checked):hover {
+    background-color: @secondaryPress;
+}
+
+headerbar button.toggle {
+    background-color: @secondaryUI;
+    color: @secondaryUIText;
+}
+
+headerbar button.toggle:not(:checked) {
+    background-color: transparent;
+    color: inherit;
+}
+
+headerbar button.toggle:not(:checked):hover {
+    background-color: @primaryUIPress;
+    color: @primaryUIText;
 }
 
 entry {
@@ -92,6 +116,21 @@ combobox button.combo:not(:first-child) {
     border-bottom-left-radius: 0;
 }
 
+combobox arrow {
+    min-width: 24px;
+    min-height: 24px;
+    padding-bottom: 4px;
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+combobox arrow:dir(ltr) {
+    margin-right: -4px;
+}
+
+combobox arrow:dir(rtl) {
+    margin-left: -4px;
+}
+
 combobox + combobox {
     padding-left: 2px;
 }
@@ -103,12 +142,36 @@ selection {
     border-top: 2px solid @primaryUI;
 }
 
-frame, scrolledwindow.frame {
+frame, scrolledwindow.frame, notebook box {
     margin: 2px;
     background-color: @secondaryBackground;
     color: @secondaryText;
     border-radius: 8px;
     background-clip: border-box;
+}
+
+actionbar.background, .sidebar, filechooser ~ box.dialog-action-box {
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+}
+
+actionbar {
+    padding: 4px;
+}
+
+frame entry, scrolledwindow.frame entry, notebook box entry, actionbar.background entry, .sidebar entry, filechooser ~ box.dialog-action-box entry,
+frame combobox, scrolledwindow.frame combobox, notebook box combobox, actionbar.background combobox, .sidebar combobox, filechooser ~ box.dialog-action-box combobox
+{
+    background-color: @primaryBackground;
+    color: @primaryText;
+}
+
+paned.horizontal > separator {
+    margin-left: -8px;
+}
+
+paned.vertical > separator {
+    margin-top: -8px;
 }
 
 treeview {
@@ -146,6 +209,39 @@ treeview header button:first-child {
 
 treeview header button:last-child {
     border-top-right-radius: 8px;
+}
+
+paned treeview header button:first-child, paned treeview header button:last-child {
+    border-radius: 0;
+}
+
+list row {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+list row:selected {
+    background-color: @primaryUI;
+    color: @primaryUIText;
+}
+
+notebook tab {
+    margin: 2px;
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
+    transition: 0.5s background-color, 0.5s color;
+}
+
+notebook tab:hover {
+    background-color: @secondaryBackground;
+    color: @secondaryText;
+}
+
+notebook tab:checked {
+    background-color: @primaryUI;
+    color: @primaryUIText;
 }
 
 scrollbar button {
