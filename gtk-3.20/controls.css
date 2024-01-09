@@ -245,9 +245,7 @@ notebook tab:checked {
 }
 
 scrollbar button {
-    width: 0;
     min-width: 0;
-    height: 0;
     min-height: 0;
     padding: 0;
     border-radius: 0;
@@ -276,7 +274,6 @@ menuitem:hover {
 window menu {
     background-color: @secondaryBackground;
     color: @secondaryText;
-    border-radius: 8px;
 }
 
 window menu menuitem {
@@ -298,13 +295,7 @@ popover {
     border-radius: 8px;
 }
 
-tooltip {
-    border-radius: 8px;
-}
-
 tooltip.background {
     background-color: @secondaryBackground;
     color: @secondaryText;
-    border: 1px solid @secondarySelected;
-    border-radius: 8px;
 }

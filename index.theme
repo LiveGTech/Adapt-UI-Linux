@@ -6,5 +6,5 @@ Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 Name=Adapt UI
-GtkTheme=Adapt UI
-IconTheme=Adapt UI
+GtkTheme=Adapt-UI-Linux
+IconTheme=Adapt-UI-Linux
